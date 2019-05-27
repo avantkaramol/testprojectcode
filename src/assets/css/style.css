@@ -1,0 +1,124 @@
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e6ecf0 !important;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+  width:100%;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 15px; 
+  font-weight: bold;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  color: black;
+}
+
+.header a.active {
+  color: blue;
+}
+
+.header-right {
+  float: right;
+  width: 60%;
+}
+
+
+header .navbar-primary{
+	width: 100%;
+}
+
+
+.leftPanel-baground-image{     background-image: url(../images/bg-01.jpg); backface-visibility: visible; background-repeat: no-repeat; min-height: 100%;  height: auto; position: fixed;  top: 0; left: 0; width: 50%; }
+.rightPanel{
+	padding: 20px;
+    width: 30% !important;
+    position: fixed;
+    right: 116px;
+    top: 30%
+}
+.rightPanel button{
+	width:100% !important;
+}
+
+
+.main-containt{
+	margin-top: 50px;
+}
+.twitterContainer .card{
+	margin-bottom: 10px;
+}
+
+.user-profile-card .card-image{
+	height: 100px;
+	background: blue;
+	position: relative;
+}
+#profileWraper{
+	position: absolute;
+    bottom: -20px;
+    left: 30px;
+    border-radius: 23px;
+}
+#profileWraper img{
+	border-radius: 23px;
+}
+
+.user-profile-card .card-title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin: -1px 0 -2px 0;
+    color: #657786
+}
+
+.user-profile-card .card-title a:hover {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+.tweetLabel,.tweetCount {
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .02em;
+    line-height: 16px;
+    overflow: hidden;
+    transition: color .15s ease-in-out;
+}
+.tweetCount {
+	color: #1DA1F2 !important;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+    transition: color .15s ease-in-out;
+}
+
+.searchTweetHomepage{
+	width: 20%;
+	margin: auto; 
+}
+
+.credentials{
+	margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.notfound .notfound-404 h1 { 
+  background: url('../images/text.png'); 
+} 

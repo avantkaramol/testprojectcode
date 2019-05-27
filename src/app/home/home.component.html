@@ -1,0 +1,63 @@
+<div>
+	<app-header [isResult]="isResult" [searchName]="username" [error]="error"></app-header>
+	<div class="container grid-xl main-containt">
+		<div class="searchTweetHomepage" *ngIf="!isResult && !error">
+			<app-search-tweet [searchName]="username"></app-search-tweet>
+		</div>
+		<div class="searchTweetHomepage">
+			<p *ngIf="error">{{error}}</p>
+		</div>
+
+	<div class="columns">
+		<div class="column col-3">
+			<div class="user-profile-card" *ngIf="isResult">
+				<div class="card">
+					<div class="card-image">
+						<div id="profileWraper">
+							<a href="{{twitterUser.url}}"><img src="{{twitterUser.profile_image_url}}" class="img-responsive"></a>
+						</div>
+					</div>
+					<div class="card-header ">
+						<div class="container">
+						  <div class="columns">
+						    <!-- <div class="column col-4 col-mr-auto">col-4 col-mr-auto</div> -->
+						    <div class="column col-8 col-ml-auto">
+								<a href="{{twitterUser.url}}"><div class="card-title h5">{{twitterUser.name}}</div></a>
+								<a href="{{twitterUser.url}}"><div class="card-subtitle text-gray">{{twitterUser.screen_name}}</div></a>    	
+						    </div>
+						  </div>
+						</div>						
+					</div>
+					<div class="card-body">
+						<div class="container">
+						  <div class="columns">
+						    <div class="column col-6">
+						    	<div class="tweetLabel"> Tweets </div>
+						    	<div class="tweetCount">{{twitterUser.tweets_count}}</div>
+						    </div>
+						    <div class="column col-6">
+						    	<div class="tweetLabel"> Following </div>
+						    	<div class="tweetCount">{{twitterUser.followers_count}}</div>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column col-6">
+			<div class="twitterContainer" *ngIf="isResult && twitterUser">
+				<div class="card" *ngFor="let tweet of twitterUser.tweets">
+					<div class="card-body">
+					 {{tweet.text}}
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- <div class="column col-3">col-xs-3</div> -->
+	</div>
+		  <!-- <a routerLink="/">login</a> -->
+	</div>
+
+</div>
+
