@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormBuilder, FormGroup, FormControl, Validators  } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ export class SearchTweetComponent implements OnInit {
 
  searchForm : FormGroup;
  @Input() searchName?:string;
+ isSubmitted  =  false;
   constructor( public router: Router ) { }
 
   ngOnInit() {
@@ -21,12 +22,20 @@ export class SearchTweetComponent implements OnInit {
   createSearchForm(){
 
 	  this.searchForm = new FormGroup({
-	    searchTweet: new FormControl(''),
+	    searchTweet: new FormControl('',[Validators.required]),
 	  });
 
   }
 
+
+  get formControls() { return this.searchForm.controls; }
+
   searchTweetSubmit(){
+  	this.isSubmitted = true;
+    if(this.searchForm.invalid){
+      return;
+    }
+
   	this.router.navigate(['/home'], {queryParams:{username:this.searchForm.value.searchTweet}});
   }
 

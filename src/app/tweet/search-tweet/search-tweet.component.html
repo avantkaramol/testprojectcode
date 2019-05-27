@@ -1,8 +1,11 @@
 <div class="tweetSearchFormWrap">	
 	<form [formGroup]="searchForm" (ngSubmit)="searchTweetSubmit()">
 		<div class="input-group input-inline">
-	      <input class="form-input" type="text" placeholder="search" formControlName="searchTweet">
-	      <button class="btn btn-primary input-group-btn" >Search</button>
+	      <input class="form-input" type="text" name="searchTweet" placeholder="search" formControlName="searchTweet">
+	      <button class="btn btn-primary input-group-btn" >Search</button>	      
 	    </div>
+	    <div class="error">
+	      	<small style="color:red;" *ngIf="isSubmitted && formControls.searchTweet.errors">Please enter tweeter name</small>
+	      </div>
 	</form>
 </div>
